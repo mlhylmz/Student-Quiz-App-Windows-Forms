@@ -39,7 +39,7 @@ namespace DenemeForm
                 else if (choice == "admin" && textBox1.Text == cl.getadminUserName() && textBox2.Text == cl.getadminPassword())
                 {
                     MessageBox.Show("Admin girişi yapıldı");
-                    Admin adminForm = new Admin(); //this is the change, code for redirect  
+                    Admin adminForm = new Admin(); 
                     adminForm.ShowDialog();
                 }
                 else if (choice == "sorumlu" && textBox1.Text == cl.getSorumluUsername() && textBox2.Text == cl.getSorumluPassword() )

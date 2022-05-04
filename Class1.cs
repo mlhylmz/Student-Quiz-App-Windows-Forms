@@ -8,6 +8,15 @@ namespace DenemeForm
 {
     internal class Class1
     {
+        string[] ans = {"z", "A", "D", "A","C", "C","B", "A","C", "C", "A", "C","C", "D", "B", "A","D", "C", "B", "B","C", "A", "B", "B","D"};
+
+
+        public string getAns(int id)
+        {
+            return ans[id];
+        }
+
+        Random random = new Random();
         string ogrenciUserName = "melih";
         string ogrenciPassword = "melih123";
 
@@ -37,5 +46,6 @@ namespace DenemeForm
         {
             MessageBox.Show("print başarılı");
         }
+        public int randNumber() { return random.Next(1, 25); }
     }
 }
