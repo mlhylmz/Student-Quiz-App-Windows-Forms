@@ -7,25 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Word;
+using System.IO;
 
 namespace DenemeForm
 {
     public partial class Login : Form
     {
+        Class1 cl = new Class1();
+
 
         string choice = "default";
-        string ogrenciUserName = "melih";
-        string ogrenciPassword = "melih123";
-
-        string ogrenci2UserName = "default";
-        string ogrenci2Password = "default";
         
-        string adminUserName = "admin";
-        string adminPassword = "admin123";
-
-        string sorumluUsername = "sorumlu";
-        string sorumluPassword = "sorumlu123";
         public Login()
         {
             InitializeComponent();
@@ -40,21 +32,21 @@ namespace DenemeForm
         {
             if (textBox1.Text != "" && textBox2.Text != "")
             {
-                if (choice == "öğrenci" && textBox1.Text == ogrenciUserName && textBox2.Text == ogrenciPassword)
+                if (choice == "öğrenci" && textBox1.Text == cl.getogrenciUsername() && textBox2.Text == cl.getogrenciPassword())
                 {
                     MessageBox.Show("Öğrenci");
                 }
-                else if (choice == "admin" && textBox1.Text == adminUserName && textBox2.Text == adminPassword)
+                else if (choice == "admin" && textBox1.Text == cl.getadminUserName() && textBox2.Text == cl.getadminPassword())
                 {
                     MessageBox.Show("Admin girişi yapıldı");
                     Admin adminForm = new Admin(); //this is the change, code for redirect  
                     adminForm.ShowDialog();
                 }
-                else if (choice == "sorumlu" && textBox1.Text == sorumluUsername && textBox2.Text == sorumluPassword)
+                else if (choice == "sorumlu" && textBox1.Text == cl.getSorumluUsername() && textBox2.Text == cl.getSorumluPassword() )
                 {
                     MessageBox.Show("Sorumlu girişi yapıldı.");
                 }
-                else if (choice == "öğrenci" && textBox1.Text == ogrenci2UserName && textBox2.Text == ogrenci2Password)
+                else if (choice == "öğrenci" && textBox1.Text == cl.getogrenci2UserName() && textBox2.Text == cl.getogrenci2Password())
                 {
                     MessageBox.Show("öğrenci 2");
                 }
@@ -87,21 +79,21 @@ namespace DenemeForm
 
         private void sifreUnutBtn_Click(object sender, EventArgs e)
         {
-            if (choice == "öğrenci" && textBox1.Text == ogrenciUserName)
+            if (choice == "öğrenci" && textBox1.Text == cl.getogrenciUsername())
             {
-                _ = MessageBox.Show("Şifreniz : " + ogrenciPassword);
+                _ = MessageBox.Show("Şifreniz : " + cl.getogrenciPassword());
             }
-            else if (choice == "admin" && textBox1.Text == adminUserName)
+            else if (choice == "admin" && textBox1.Text == cl.getadminUserName())
             {
-                _ = MessageBox.Show("Şifreniz : " + adminPassword);
+                _ = MessageBox.Show("Şifreniz : " + cl.getadminPassword());
             }
-            else if (choice == "sorumlu" && textBox1.Text == sorumluUsername)
+            else if (choice == "sorumlu" && textBox1.Text == cl.getSorumluUsername())
             {
-                _ = MessageBox.Show("Şifreniz : " + sorumluPassword);
+                _ = MessageBox.Show("Şifreniz : " + cl.getSorumluPassword());
             }
-            else if (choice == "öğrenci" && textBox1.Text == ogrenci2UserName)
+            else if (choice == "öğrenci" && textBox1.Text == cl.getogrenci2UserName())
             {
-                _ = MessageBox.Show("Şifreniz : " + ogrenci2Password);
+                _ = MessageBox.Show("Şifreniz : " + cl.getogrenci2Password());
             }
             else
             {
@@ -111,9 +103,9 @@ namespace DenemeForm
 
         public void kayitBtn_Click(object sender, EventArgs e)
         {
-            ogrenci2UserName = textBox1.Text;
-            ogrenci2Password = textBox2.Text;
-            _ = MessageBox.Show("Kayıt Başarılı\nKullanıcı Adı : " + ogrenci2UserName + "\nŞifreniz : " + ogrenci2Password);
+            cl.setOgrenci2UserName(textBox1.Text);
+            cl.setOgrenci2Password(textBox2.Text);
+            _ = MessageBox.Show("Kayıt Başarılı\nKullanıcı Adı : " + cl.getogrenci2UserName() + "\nŞifreniz : " + cl.getogrenci2Password());
         }
     }
 }
