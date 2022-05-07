@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Word;
 using System.IO;
 
 namespace DenemeForm
@@ -19,42 +18,46 @@ namespace DenemeForm
         public string currentAnswer = "default";
         public int rightAnswerCounter = 0;
         public int wrongAnswerCounter = 0;
+        public int emptyAnswerCounter =0;
         public int ort = 0;
+        public int seconds = 60; 
 
         public Admin()
         {
+            seconds = cl.getTimerSec();
             InitializeComponent();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        public void button1_Click_1(object sender, EventArgs e)
         {
+            timer1.Start();
             
 
             ///     DOĞRU CEVAPLANAN SORULAR
             if (radioButton1.Checked && currentAnswer == "A")
             {
-                rightAnswerCounter++;
+                setRight(1);
                 MessageBox.Show("Doğru");
                 radioButton1.Checked = false;
                 label1.Text = "Doğru Sayısı : " + rightAnswerCounter.ToString();
             }
             else if (radioButton2.Checked && currentAnswer == "B")
             {
-                rightAnswerCounter++;
+                setRight(1);
                 MessageBox.Show("Doğru");
                 radioButton2.Checked = false;
                 label1.Text = "Doğru Sayısı : " + rightAnswerCounter.ToString();
             }
             else if (radioButton3.Checked && currentAnswer == "C")
             {
-                rightAnswerCounter++;
+                setRight(1);
                 MessageBox.Show("Doğru");
                 radioButton3.Checked = false;
                 label1.Text = "Doğru Sayısı : " + rightAnswerCounter.ToString();
             }
             else if (radioButton4.Checked && currentAnswer == "D")
             {
-                rightAnswerCounter++;
+                setRight(1);
                 MessageBox.Show("Doğru");
                 radioButton4.Checked = false;
                 label1.Text = "Doğru Sayısı : " + rightAnswerCounter.ToString();
@@ -67,31 +70,40 @@ namespace DenemeForm
             ///     YANLIŞ CEVAPLANAN SORULAR
             else if (radioButton1.Checked && currentAnswer != "A")
             {
-                wrongAnswerCounter++;
+                setWrong(1);
                 MessageBox.Show("Yanlış");
                 radioButton1.Checked = false;
                 label2.Text = "Yanlış Sayısı : " + wrongAnswerCounter.ToString();
             }
             else if (radioButton2.Checked && currentAnswer != "B")
             {
-                wrongAnswerCounter++;
+                setWrong(1);
                 MessageBox.Show("Yanlış");
                 radioButton2.Checked = false;
                 label2.Text = "Yanlış Sayısı : " + wrongAnswerCounter.ToString();
             }
             else if (radioButton3.Checked && currentAnswer != "C")
             {
-                wrongAnswerCounter++;
+                setWrong(1);
                 MessageBox.Show("Yanlış");
                 radioButton3.Checked = false;
                 label2.Text = "Yanlış Sayısı : " + wrongAnswerCounter.ToString();
             }
             else if (radioButton4.Checked && currentAnswer != "D")
             {
-                wrongAnswerCounter++;
+                setWrong(1);
                 MessageBox.Show("Yanlış");
                 radioButton4.Checked = false;
                 label2.Text = "Yanlış Sayısı : " + wrongAnswerCounter.ToString();
+            }
+
+            ///     BOŞ BIRAKILAN SORULAR
+            else
+            {
+                MessageBox.Show("Boş bırakıldı");
+                setEmpty(1);
+                label4.Text = "Boş Sayısı : " + emptyAnswerCounter.ToString();
+
             }
 
             ort = rightAnswerCounter - (wrongAnswerCounter / 3);
@@ -101,10 +113,45 @@ namespace DenemeForm
 
 
             TempId = cl.randNumber();
-            pictureBox2.Image = Image.FromFile("c:\\Resim\\" + TempId.ToString() + ".jpg");
+            pictureBox2.Image = Image.FromFile("c:\\Sorular\\" + TempId.ToString() + ".jpg");
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             currentAnswer = cl.getAns(TempId);
 
         }
+
+        public void timer1_Tick(object sender, EventArgs e)
+        {
+            timerLabel.Text = "Kalan Zaman : " + seconds--.ToString();
+            if (seconds < 0)
+            {
+                timer1.Stop();
+                this.Close();
+                ogrenciSonuc sonuc = new ogrenciSonuc();
+
+                MessageBox.Show("Zaman Bitti. Sonuçlar aktarılıyor.");
+                sonuc.Show();
+
+            }
+        }
+
+        private void adminKapatBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            GC.Collect();
+        }
+        public int getWrong(){return wrongAnswerCounter; }
+        public int getRight() { return rightAnswerCounter; }
+
+        public int getEmpty() { return emptyAnswerCounter; }
+
+        public int getOrt() { return ort; }
+
+        public int getToplam() { return wrongAnswerCounter + rightAnswerCounter + emptyAnswerCounter; }
+
+        public void setWrong(int num) { this.wrongAnswerCounter = this.wrongAnswerCounter + num; }
+
+        public void setRight(int num) { this.rightAnswerCounter = this.rightAnswerCounter + num; }
+
+        public void setEmpty(int num) { this.emptyAnswerCounter = this.emptyAnswerCounter + num; }
     }
 }

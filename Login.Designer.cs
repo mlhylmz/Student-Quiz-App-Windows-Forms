@@ -163,6 +163,7 @@
             this.Controls.Add(this.sinavCheck);
             this.Controls.Add(this.ogrenciCheck);
             this.Controls.Add(this.adminBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);

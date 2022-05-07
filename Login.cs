@@ -34,17 +34,22 @@ namespace DenemeForm
             {
                 if (choice == "öğrenci" && textBox1.Text == cl.getogrenciUsername() && textBox2.Text == cl.getogrenciPassword())
                 {
-                    MessageBox.Show("Öğrenci");
+                    MessageBox.Show("Öğrenci Girişi Yapıldı");
+                    Admin adminForm = new Admin();
+                    adminForm.Show();
                 }
                 else if (choice == "admin" && textBox1.Text == cl.getadminUserName() && textBox2.Text == cl.getadminPassword())
                 {
                     MessageBox.Show("Admin girişi yapıldı");
-                    Admin adminForm = new Admin(); 
-                    adminForm.ShowDialog();
+                    
                 }
                 else if (choice == "sorumlu" && textBox1.Text == cl.getSorumluUsername() && textBox2.Text == cl.getSorumluPassword() )
                 {
                     MessageBox.Show("Sorumlu girişi yapıldı.");
+                    Sinav sinavSorumlu = new Sinav();
+                    sinavSorumlu.ShowDialog();
+                    
+                    
                 }
                 else if (choice == "öğrenci" && textBox1.Text == cl.getogrenci2UserName() && textBox2.Text == cl.getogrenci2Password())
                 {

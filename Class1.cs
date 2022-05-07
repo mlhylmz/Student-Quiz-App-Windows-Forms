@@ -8,13 +8,23 @@ namespace DenemeForm
 {
     internal class Class1
     {
-        string[] ans = {"z", "A", "D", "A","C", "C","B", "A","C", "C", "A", "C","C", "D", "B", "A","D", "C", "B", "B","C", "A", "B", "B","D"};
+        string[] ans = {"z", "A", "D", "A","C", "C", "B", "A","C", "C", "A", "C", "C", "D", "B" , "A","D", "C", "B", "B","C", "A", "B", "B","D",
+        "C","B","B","C","C","D","D","C","A","A","A","A","A","C","B","B","B","A","D","C","B","C","B","D","D","B","B","A","A","B","A","C","C","A","A","C",
+        "B","A","D","A","C","B","C","C","B","C","D","A","D","D","B","B","A","D","A","D","B","C","B","B","D","D","A","D","D","C","A","D","C","D","C",
+        "C","C","A","B","B","D"};
 
 
         public string getAns(int id)
         {
             return ans[id];
         }
+
+        public int timerSec = 15;
+        public void setTimerSec(int time)
+        {
+            timerSec = time;
+        }
+        public int getTimerSec() { return timerSec; }
 
         Random random = new Random();
         string ogrenciUserName = "melih";
@@ -46,6 +56,6 @@ namespace DenemeForm
         {
             MessageBox.Show("print başarılı");
         }
-        public int randNumber() { return random.Next(1, 25); }
+        public int randNumber() { return random.Next(1, 102); }
     }
 }
