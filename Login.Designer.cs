@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.adminBox = new System.Windows.Forms.CheckBox();
-            this.ogrenciCheck = new System.Windows.Forms.CheckBox();
-            this.sinavCheck = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -39,40 +36,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.kayitBtn = new System.Windows.Forms.Button();
             this.sifreUnutBtn = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
-            // 
-            // adminBox
-            // 
-            this.adminBox.AutoSize = true;
-            this.adminBox.Location = new System.Drawing.Point(147, 349);
-            this.adminBox.Name = "adminBox";
-            this.adminBox.Size = new System.Drawing.Size(62, 19);
-            this.adminBox.TabIndex = 0;
-            this.adminBox.Text = "Admin";
-            this.adminBox.UseVisualStyleBackColor = true;
-            this.adminBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // ogrenciCheck
-            // 
-            this.ogrenciCheck.AutoSize = true;
-            this.ogrenciCheck.Location = new System.Drawing.Point(67, 349);
-            this.ogrenciCheck.Name = "ogrenciCheck";
-            this.ogrenciCheck.Size = new System.Drawing.Size(68, 19);
-            this.ogrenciCheck.TabIndex = 1;
-            this.ogrenciCheck.Text = "Öğrenci";
-            this.ogrenciCheck.UseVisualStyleBackColor = true;
-            this.ogrenciCheck.CheckedChanged += new System.EventHandler(this.ogrenciCheck_CheckedChanged);
-            // 
-            // sinavCheck
-            // 
-            this.sinavCheck.AutoSize = true;
-            this.sinavCheck.Location = new System.Drawing.Point(83, 374);
-            this.sinavCheck.Name = "sinavCheck";
-            this.sinavCheck.Size = new System.Drawing.Size(114, 19);
-            this.sinavCheck.TabIndex = 2;
-            this.sinavCheck.Text = "Sınav Sorumlusu";
-            this.sinavCheck.UseVisualStyleBackColor = true;
-            this.sinavCheck.CheckedChanged += new System.EventHandler(this.sinavCheck_CheckedChanged);
             // 
             // textBox1
             // 
@@ -147,11 +114,48 @@
             this.sifreUnutBtn.UseVisualStyleBackColor = true;
             this.sifreUnutBtn.Click += new System.EventHandler(this.sifreUnutBtn_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(30, 334);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(67, 19);
+            this.radioButton1.TabIndex = 11;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Öğrenci";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(164, 334);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(61, 19);
+            this.radioButton2.TabIndex = 12;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Admin";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(69, 359);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(113, 19);
+            this.radioButton3.TabIndex = 13;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Sınav Sorumlusu";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(283, 405);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.sifreUnutBtn);
             this.Controls.Add(this.kayitBtn);
             this.Controls.Add(this.label3);
@@ -160,22 +164,15 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.sinavCheck);
-            this.Controls.Add(this.ogrenciCheck);
-            this.Controls.Add(this.adminBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = "Giriş";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private CheckBox adminBox;
-        private CheckBox ogrenciCheck;
-        private CheckBox sinavCheck;
         private TextBox textBox1;
         private Button button1;
         private TextBox textBox2;
@@ -184,5 +181,8 @@
         private Label label3;
         private Button kayitBtn;
         private Button sifreUnutBtn;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton3;
     }
 }

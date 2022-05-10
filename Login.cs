@@ -32,18 +32,18 @@ namespace DenemeForm
         {
             if (textBox1.Text != "" && textBox2.Text != "")
             {
-                if (choice == "öğrenci" && textBox1.Text == cl.getogrenciUsername() && textBox2.Text == cl.getogrenciPassword())
+                if (radioButton1.Checked && textBox1.Text == cl.getogrenciUsername() && textBox2.Text == cl.getogrenciPassword())
                 {
                     MessageBox.Show("Öğrenci Girişi Yapıldı");
-                    Admin adminForm = new Admin();
+                    Ogrenci adminForm = new Ogrenci();
                     adminForm.Show();
                 }
-                else if (choice == "admin" && textBox1.Text == cl.getadminUserName() && textBox2.Text == cl.getadminPassword())
+                else if ( radioButton2.Checked && textBox1.Text == cl.getadminUserName() && textBox2.Text == cl.getadminPassword())
                 {
                     MessageBox.Show("Admin girişi yapıldı");
                     
                 }
-                else if (choice == "sorumlu" && textBox1.Text == cl.getSorumluUsername() && textBox2.Text == cl.getSorumluPassword() )
+                else if (radioButton3.Checked && textBox1.Text == cl.getSorumluUsername() && textBox2.Text == cl.getSorumluPassword() )
                 {
                     MessageBox.Show("Sorumlu girişi yapıldı.");
                     Sinav sinavSorumlu = new Sinav();
@@ -72,15 +72,7 @@ namespace DenemeForm
 
         }
 
-        public void ogrenciCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            choice = "öğrenci";
-        }
 
-        public void sinavCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            choice = "sorumlu";
-        }
 
         private void sifreUnutBtn_Click(object sender, EventArgs e)
         {
@@ -111,6 +103,11 @@ namespace DenemeForm
             cl.setOgrenci2UserName(textBox1.Text);
             cl.setOgrenci2Password(textBox2.Text);
             _ = MessageBox.Show("Kayıt Başarılı\nKullanıcı Adı : " + cl.getogrenci2UserName() + "\nŞifreniz : " + cl.getogrenci2Password());
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

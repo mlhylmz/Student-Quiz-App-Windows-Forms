@@ -38,6 +38,7 @@ namespace DenemeForm
 
         string sorumluUsername = "sorumlu";
         string sorumluPassword = "sorumlu123";
+
         public string getogrenciUsername() {return ogrenciUserName;}
         public string getogrenciPassword() {return ogrenciPassword;}
 
@@ -49,6 +50,7 @@ namespace DenemeForm
 
         public string getSorumluUsername() { return sorumluUsername; }
         public string getSorumluPassword() { return sorumluPassword; }
+
 
         public void setOgrenci2UserName(string name) { ogrenci2UserName = name;}
         public void setOgrenci2Password(string password) { ogrenci2Password = password;}

@@ -11,7 +11,7 @@ using System.IO;
 
 namespace DenemeForm
 {
-    public partial class Admin : Form
+    public partial class Ogrenci : Form
     {
         Class1 cl = new Class1();
         public int TempId = 1;
@@ -22,7 +22,7 @@ namespace DenemeForm
         public int ort = 0;
         public int seconds = 60; 
 
-        public Admin()
+        public Ogrenci()
         {
             seconds = cl.getTimerSec();
             InitializeComponent();
@@ -125,11 +125,14 @@ namespace DenemeForm
             if (seconds < 0)
             {
                 timer1.Stop();
-                this.Close();
-                ogrenciSonuc sonuc = new ogrenciSonuc();
 
-                MessageBox.Show("Zaman Bitti. Sonuçlar aktarılıyor.");
-                sonuc.Show();
+                ///this.Close();
+                ///ogrenciSonuc sonuc = new ogrenciSonuc();
+                ///sonuc.Show();
+
+                MessageBox.Show("Zaman Bitti. Sonuçlar...\n\nToplam Soru Sayısı : " + getToplam().ToString() + "\n\nDoğru Sayısı : " + getRight().ToString() + 
+                    "\n\nYanlış Sayısı : " + getWrong().ToString()
+                    + "\n\nBoş Sayısı : " + getEmpty().ToString() + "\n\nNet Sayısı : " + getOrt().ToString());
 
             }
         }
@@ -153,5 +156,10 @@ namespace DenemeForm
         public void setRight(int num) { this.rightAnswerCounter = this.rightAnswerCounter + num; }
 
         public void setEmpty(int num) { this.emptyAnswerCounter = this.emptyAnswerCounter + num; }
+
+        private void Ogrenci_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

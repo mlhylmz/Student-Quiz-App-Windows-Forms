@@ -97,7 +97,7 @@
             this.Controls.Add(this.toplamSoruLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ogrenciSonuc";
-            this.Text = "ogrenciSonuc";
+            this.Text = "Sonuçlar";
             this.Load += new System.EventHandler(this.ogrenciSonuc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

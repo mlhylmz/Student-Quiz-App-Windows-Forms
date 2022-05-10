@@ -16,19 +16,18 @@ namespace DenemeForm
 
         public ogrenciSonuc()
         {
-            
             InitializeComponent();
         }
 
-        private void ogrenciSonuc_Load(object sender, EventArgs e)
+        public void ogrenciSonuc_Load(object sender, EventArgs e)
         {
-            Admin ad = new Admin();
-            int toplamSoru = ad.getToplam();
+            Class1 cl = new Class1();
+            int toplamSoru = cl.gettoplamC();
             int net = 3;
-            toplamSoruLabel.Text = "Topmlam Soru Sayısı : " + toplamSoru;
-            DogruLabel.Text = "Doğru Sayısı : " + ad.getRight().ToString();
-            yanlisLabel.Text = "Yanlış Sayısı : " + ad.getWrong().ToString();
-            bosSayiLabel.Text = "Boş Sayısı : " + ad.getEmpty().ToString();
+            toplamSoruLabel.Text = "Toplam Soru Sayısı : " + toplamSoru;
+            DogruLabel.Text = "Doğru Sayısı : " + cl.getrightC().ToString();
+            yanlisLabel.Text = "Yanlış Sayısı : " + cl.getwrongC().ToString();
+            bosSayiLabel.Text = "Boş Sayısı : " + cl.getemptyC().ToString();
             netSayiLabel.Text = "Net Sayısı : " + net;
         }
     }

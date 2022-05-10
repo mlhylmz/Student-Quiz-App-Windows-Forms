@@ -1,6 +1,6 @@
 ﻿namespace DenemeForm
 {
-    partial class Admin
+    partial class Ogrenci
     {
         /// <summary>
         /// Required designer variable.
@@ -169,7 +169,7 @@
             this.adminKapatBtn.UseVisualStyleBackColor = true;
             this.adminKapatBtn.Click += new System.EventHandler(this.adminKapatBtn_Click);
             // 
-            // Admin
+            // Ogrenci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,8 +187,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Admin";
-            this.Text = "Admin";
+            this.Name = "Ogrenci";
+            this.Text = "Öğrenci";
+            this.Load += new System.EventHandler(this.Ogrenci_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

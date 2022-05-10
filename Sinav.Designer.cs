@@ -99,7 +99,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Sinav";
-            this.Text = "Sinav";
+            this.Text = "Sınav Sorumlusu";
             this.ResumeLayout(false);
             this.PerformLayout();
 
