@@ -13,18 +13,13 @@ namespace DenemeForm
         "B","A","D","A","C","B","C","C","B","C","D","A","D","D","B","B","A","D","A","D","B","C","B","B","D","D","A","D","D","C","A","D","C","D","C",
         "C","C","A","B","B","D"};
 
-
+        public static int randomNo = 101;
         public string getAns(int id)
         {
             return ans[id];
         }
 
-        public int timerSec = 15;
-        public void setTimerSec(int time)
-        {
-            timerSec = time;
-        }
-        public int getTimerSec() { return timerSec; }
+
 
         Random random = new Random();
         string ogrenciUserName = "melih";
@@ -51,13 +46,12 @@ namespace DenemeForm
         public string getSorumluUsername() { return sorumluUsername; }
         public string getSorumluPassword() { return sorumluPassword; }
 
-
         public void setOgrenci2UserName(string name) { ogrenci2UserName = name;}
         public void setOgrenci2Password(string password) { ogrenci2Password = password;}
-        public void print()
-        {
-            MessageBox.Show("print başarılı");
-        }
-        public int randNumber() { return random.Next(1, 102); }
+
+        public int randNumber() { return random.Next(1, getMaxRandomNumber()); }
+        public int getMaxRandomNumber() { return randomNo-1; }
+
+        public void setRandomNo(int randNo) { randomNo = randNo+1;}
     }
 }

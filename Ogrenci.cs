@@ -14,23 +14,25 @@ namespace DenemeForm
     public partial class Ogrenci : Form
     {
         Class1 cl = new Class1();
+        Sinav sn = new Sinav();
         public int TempId = 1;
         public string currentAnswer = "default";
         public int rightAnswerCounter = 0;
         public int wrongAnswerCounter = 0;
-        public int emptyAnswerCounter =0;
+        public int emptyAnswerCounter = 0;
         public int ort = 0;
-        public int seconds = 60; 
+        public int Seconds { get; set; }
 
         public Ogrenci()
         {
-            seconds = cl.getTimerSec();
             InitializeComponent();
         }
 
         public void button1_Click_1(object sender, EventArgs e)
         {
+            setSeconds(sn.getTimerSec());
             timer1.Start();
+            tempLabel.Text = cl.getMaxRandomNumber().ToString();
             
 
             ///     DOĞRU CEVAPLANAN SORULAR
@@ -121,8 +123,8 @@ namespace DenemeForm
 
         public void timer1_Tick(object sender, EventArgs e)
         {
-            timerLabel.Text = "Kalan Zaman : " + seconds--.ToString();
-            if (seconds < 0)
+            timerLabel.Text = "Kalan Zaman : " + (Seconds/60).ToString() + " Dakika  "+ (Seconds %60)+"Saniye";
+            if (Seconds < 0)
             {
                 timer1.Stop();
 
@@ -135,6 +137,7 @@ namespace DenemeForm
                     + "\n\nBoş Sayısı : " + getEmpty().ToString() + "\n\nNet Sayısı : " + getOrt().ToString());
 
             }
+            Seconds--;
         }
 
         private void adminKapatBtn_Click(object sender, EventArgs e)
@@ -156,10 +159,7 @@ namespace DenemeForm
         public void setRight(int num) { this.rightAnswerCounter = this.rightAnswerCounter + num; }
 
         public void setEmpty(int num) { this.emptyAnswerCounter = this.emptyAnswerCounter + num; }
+        public void setSeconds(int num) { this.Seconds = num; }
 
-        private void Ogrenci_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

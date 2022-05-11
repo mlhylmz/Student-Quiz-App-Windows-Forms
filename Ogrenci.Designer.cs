@@ -42,6 +42,7 @@
             this.timerLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.adminKapatBtn = new System.Windows.Forms.Button();
+            this.tempLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(670, 784);
+            this.button1.Location = new System.Drawing.Point(158, 786);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -112,7 +113,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(197, 790);
+            this.label1.Location = new System.Drawing.Point(341, 795);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 15);
             this.label1.TabIndex = 6;
@@ -121,7 +122,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(312, 790);
+            this.label2.Location = new System.Drawing.Point(456, 795);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 15);
             this.label2.TabIndex = 7;
@@ -130,7 +131,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(526, 790);
+            this.label3.Location = new System.Drawing.Point(670, 795);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 15);
             this.label3.TabIndex = 8;
@@ -139,7 +140,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(423, 790);
+            this.label4.Location = new System.Drawing.Point(567, 795);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 15);
             this.label4.TabIndex = 9;
@@ -148,7 +149,7 @@
             // timerLabel
             // 
             this.timerLabel.AutoSize = true;
-            this.timerLabel.Location = new System.Drawing.Point(508, 9);
+            this.timerLabel.Location = new System.Drawing.Point(468, 14);
             this.timerLabel.Name = "timerLabel";
             this.timerLabel.Size = new System.Drawing.Size(91, 15);
             this.timerLabel.TabIndex = 10;
@@ -169,11 +170,21 @@
             this.adminKapatBtn.UseVisualStyleBackColor = true;
             this.adminKapatBtn.Click += new System.EventHandler(this.adminKapatBtn_Click);
             // 
+            // tempLabel
+            // 
+            this.tempLabel.AutoSize = true;
+            this.tempLabel.Location = new System.Drawing.Point(30, 14);
+            this.tempLabel.Name = "tempLabel";
+            this.tempLabel.Size = new System.Drawing.Size(38, 15);
+            this.tempLabel.TabIndex = 12;
+            this.tempLabel.Text = "label5";
+            // 
             // Ogrenci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 819);
+            this.Controls.Add(this.tempLabel);
             this.Controls.Add(this.adminKapatBtn);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.label4);
@@ -189,7 +200,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Ogrenci";
             this.Text = "Öğrenci";
-            this.Load += new System.EventHandler(this.Ogrenci_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -207,7 +217,7 @@
         }
 
         #endregion
-        private PictureBox pictureBox1;
+        ///private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button button1;
         private RadioButton radioButton1;
@@ -221,5 +231,6 @@
         private Label timerLabel;
         private System.Windows.Forms.Timer timer1;
         private Button adminKapatBtn;
+        private Label tempLabel;
     }
 }

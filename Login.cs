@@ -35,12 +35,14 @@ namespace DenemeForm
                 if (radioButton1.Checked && textBox1.Text == cl.getogrenciUsername() && textBox2.Text == cl.getogrenciPassword())
                 {
                     MessageBox.Show("Öğrenci Girişi Yapıldı");
-                    Ogrenci adminForm = new Ogrenci();
-                    adminForm.Show();
+                    Ogrenci ogrenciForm = new Ogrenci();
+                    ogrenciForm.Show();
                 }
                 else if ( radioButton2.Checked && textBox1.Text == cl.getadminUserName() && textBox2.Text == cl.getadminPassword())
                 {
                     MessageBox.Show("Admin girişi yapıldı");
+                    Admin adminForm = new Admin();
+                    adminForm.Show();
                     
                 }
                 else if (radioButton3.Checked && textBox1.Text == cl.getSorumluUsername() && textBox2.Text == cl.getSorumluPassword() )
@@ -51,7 +53,7 @@ namespace DenemeForm
                     
                     
                 }
-                else if (choice == "öğrenci" && textBox1.Text == cl.getogrenci2UserName() && textBox2.Text == cl.getogrenci2Password())
+                else if (radioButton1.Checked && textBox1.Text == cl.getogrenci2UserName() && textBox2.Text == cl.getogrenci2Password())
                 {
                     MessageBox.Show("öğrenci 2");
                 }
@@ -108,6 +110,27 @@ namespace DenemeForm
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void melihBtn_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "melih";
+            textBox2.Text = "melih123";
+            radioButton1.Checked = true;
+        }
+
+        private void adminBtn_Click_1(object sender, EventArgs e)
+        {
+            textBox1.Text = "admin";
+            textBox2.Text = "admin123";
+            radioButton2.Checked = true;
+        }
+
+        private void sorumluBtn_Click_1(object sender, EventArgs e)
+        {
+            textBox1.Text = "sorumlu";
+            textBox2.Text = "sorumlu123";
+            radioButton3.Checked = true;
         }
     }
 }

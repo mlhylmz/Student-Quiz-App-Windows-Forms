@@ -39,6 +39,9 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.melihBtn = new System.Windows.Forms.Button();
+            this.adminBtn = new System.Windows.Forms.Button();
+            this.sorumluBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -117,7 +120,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(30, 334);
+            this.radioButton1.Location = new System.Drawing.Point(67, 321);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(67, 19);
             this.radioButton1.TabIndex = 11;
@@ -129,7 +132,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(164, 334);
+            this.radioButton2.Location = new System.Drawing.Point(67, 346);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(61, 19);
             this.radioButton2.TabIndex = 12;
@@ -140,7 +143,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(69, 359);
+            this.radioButton3.Location = new System.Drawing.Point(67, 371);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(113, 19);
             this.radioButton3.TabIndex = 13;
@@ -148,11 +151,44 @@
             this.radioButton3.Text = "Sınav Sorumlusu";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
+            // melihBtn
+            // 
+            this.melihBtn.Location = new System.Drawing.Point(234, 103);
+            this.melihBtn.Name = "melihBtn";
+            this.melihBtn.Size = new System.Drawing.Size(26, 23);
+            this.melihBtn.TabIndex = 14;
+            this.melihBtn.Text = "1";
+            this.melihBtn.UseVisualStyleBackColor = true;
+            this.melihBtn.Click += new System.EventHandler(this.melihBtn_Click);
+            // 
+            // adminBtn
+            // 
+            this.adminBtn.Location = new System.Drawing.Point(234, 136);
+            this.adminBtn.Name = "adminBtn";
+            this.adminBtn.Size = new System.Drawing.Size(26, 23);
+            this.adminBtn.TabIndex = 15;
+            this.adminBtn.Text = "2";
+            this.adminBtn.UseVisualStyleBackColor = true;
+            this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click_1);
+            // 
+            // sorumluBtn
+            // 
+            this.sorumluBtn.Location = new System.Drawing.Point(234, 168);
+            this.sorumluBtn.Name = "sorumluBtn";
+            this.sorumluBtn.Size = new System.Drawing.Size(26, 23);
+            this.sorumluBtn.TabIndex = 16;
+            this.sorumluBtn.Text = "3";
+            this.sorumluBtn.UseVisualStyleBackColor = true;
+            this.sorumluBtn.Click += new System.EventHandler(this.sorumluBtn_Click_1);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(283, 405);
+            this.Controls.Add(this.sorumluBtn);
+            this.Controls.Add(this.adminBtn);
+            this.Controls.Add(this.melihBtn);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -184,5 +220,8 @@
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private RadioButton radioButton3;
+        private Button melihBtn;
+        private Button adminBtn;
+        private Button sorumluBtn;
     }
 }

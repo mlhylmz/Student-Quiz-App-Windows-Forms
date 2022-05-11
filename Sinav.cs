@@ -11,8 +11,8 @@ using System.Windows.Forms;
 namespace DenemeForm
 {
     public partial class Sinav : Form
-    {   
-        Class1 cl1 = new Class1();
+    {
+        public static int timer = 420;
         public Sinav()
         {
             InitializeComponent();
@@ -20,29 +20,47 @@ namespace DenemeForm
 
         public void sinavKaydetBtn_Click(object sender, EventArgs e)
         {
+            
             if (radioButton1.Checked)
             {
-                cl1.setTimerSec(420);
-                MessageBox.Show("Kaydedildi");
+                setTimerSec(440);
+                MessageBox.Show("Kaydedildi. Yeni Süre : " + getTimerSecText());
                 this.Close();
                 GC.Collect();
-                ///MessageBox.Show(cl1.getTimerSec);
             }
             else if (radioButton2.Checked)
             {
-                cl1.setTimerSec(600);
-                MessageBox.Show("Kaydedildi");
+                setTimerSec(600);
+                MessageBox.Show("Kaydedildi. Yeni Süre : " + getTimerSecText());
                 this.Close();
                 GC.Collect();
 
             }
             else if (radioButton3.Checked)
             {
-                cl1.setTimerSec(720);
-                MessageBox.Show("Kaydedildi");
+                setTimerSec(750);
+                MessageBox.Show("Kaydedildi. Yeni Süre : " + getTimerSecText());
                 this.Close();
                 GC.Collect();
             }
+        }
+
+        public int getTimerSec() {
+            return timer;
+        }
+        public string getTimerSecText() {
+            int sec = getTimerSec();
+            string minsec = (sec/60).ToString()+ " Dakika   "+(sec%60).ToString()+ " Saniye";
+            return minsec;
+        }
+        public static void setTimerSec(int time)
+        {
+            timer = time;
+        }
+
+        private void Sinav_Load(object sender, EventArgs e)
+        {
+            suAnkiSureLabel.Text = "Şu an ki Quiz süresi : "+ getTimerSecText();
         }
     }
 }
