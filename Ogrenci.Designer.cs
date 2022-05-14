@@ -43,6 +43,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.adminKapatBtn = new System.Windows.Forms.Button();
             this.tempLabel = new System.Windows.Forms.Label();
+            this.sygmaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,11 +180,21 @@
             this.tempLabel.TabIndex = 12;
             this.tempLabel.Text = "label5";
             // 
+            // sygmaLabel
+            // 
+            this.sygmaLabel.AutoSize = true;
+            this.sygmaLabel.Location = new System.Drawing.Point(191, 14);
+            this.sygmaLabel.Name = "sygmaLabel";
+            this.sygmaLabel.Size = new System.Drawing.Size(195, 15);
+            this.sygmaLabel.TabIndex = 13;
+            this.sygmaLabel.Text = "Bu soruyu doğru cevaplama sayısı : ";
+            // 
             // Ogrenci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 819);
+            this.Controls.Add(this.sygmaLabel);
             this.Controls.Add(this.tempLabel);
             this.Controls.Add(this.adminKapatBtn);
             this.Controls.Add(this.timerLabel);
@@ -200,6 +211,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Ogrenci";
             this.Text = "Öğrenci";
+            this.Load += new System.EventHandler(this.Ogrenci_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,7 +229,6 @@
         }
 
         #endregion
-        ///private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button button1;
         private RadioButton radioButton1;
@@ -232,5 +243,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button adminKapatBtn;
         private Label tempLabel;
+        private Label sygmaLabel;
     }
 }

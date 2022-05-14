@@ -15,18 +15,15 @@ namespace DenemeForm
     {
         Class1 cl = new Class1();
 
-
-        string choice = "default";
+        ///form1.StartPosition = FormStartPosition.CenterScreen;
         
         public Login()
-        {
+        {   
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
-        public void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            choice = "admin";
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,12 +33,14 @@ namespace DenemeForm
                 {
                     MessageBox.Show("Öğrenci Girişi Yapıldı");
                     Ogrenci ogrenciForm = new Ogrenci();
+                    ogrenciForm.StartPosition = FormStartPosition.CenterScreen;
                     ogrenciForm.Show();
                 }
                 else if ( radioButton2.Checked && textBox1.Text == cl.getadminUserName() && textBox2.Text == cl.getadminPassword())
                 {
                     MessageBox.Show("Admin girişi yapıldı");
                     Admin adminForm = new Admin();
+                    adminForm.StartPosition = FormStartPosition.CenterScreen;
                     adminForm.Show();
                     
                 }
@@ -49,13 +48,14 @@ namespace DenemeForm
                 {
                     MessageBox.Show("Sorumlu girişi yapıldı.");
                     Sinav sinavSorumlu = new Sinav();
+                    sinavSorumlu.StartPosition = FormStartPosition.CenterScreen;
                     sinavSorumlu.ShowDialog();
                     
                     
                 }
                 else if (radioButton1.Checked && textBox1.Text == cl.getogrenci2UserName() && textBox2.Text == cl.getogrenci2Password())
                 {
-                    MessageBox.Show("öğrenci 2");
+                    MessageBox.Show("2. Öğrenci Girişi Yapıldı.");
                 }
                 else
                 {
@@ -78,19 +78,19 @@ namespace DenemeForm
 
         private void sifreUnutBtn_Click(object sender, EventArgs e)
         {
-            if (choice == "öğrenci" && textBox1.Text == cl.getogrenciUsername())
+            if (radioButton1.Checked && textBox1.Text == cl.getogrenciUsername())
             {
                 _ = MessageBox.Show("Şifreniz : " + cl.getogrenciPassword());
             }
-            else if (choice == "admin" && textBox1.Text == cl.getadminUserName())
+            else if (radioButton2.Checked && textBox1.Text == cl.getadminUserName())
             {
                 _ = MessageBox.Show("Şifreniz : " + cl.getadminPassword());
             }
-            else if (choice == "sorumlu" && textBox1.Text == cl.getSorumluUsername())
+            else if (radioButton3.Checked && textBox1.Text == cl.getSorumluUsername())
             {
                 _ = MessageBox.Show("Şifreniz : " + cl.getSorumluPassword());
             }
-            else if (choice == "öğrenci" && textBox1.Text == cl.getogrenci2UserName())
+            else if (radioButton1.Checked && textBox1.Text == cl.getogrenci2UserName())
             {
                 _ = MessageBox.Show("Şifreniz : " + cl.getogrenci2Password());
             }
@@ -132,5 +132,6 @@ namespace DenemeForm
             textBox2.Text = "sorumlu123";
             radioButton3.Checked = true;
         }
+
     }
 }

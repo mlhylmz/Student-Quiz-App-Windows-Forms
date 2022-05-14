@@ -11,14 +11,19 @@ namespace DenemeForm
         string[] ans = {"z", "A", "D", "A","C", "C", "B", "A","C", "C", "A", "C", "C", "D", "B" , "A","D", "C", "B", "B","C", "A", "B", "B","D",
         "C","B","B","C","C","D","D","C","A","A","A","A","A","C","B","B","B","A","D","C","B","C","B","D","D","B","B","A","A","B","A","C","C","A","A","C",
         "B","A","D","A","C","B","C","C","B","C","D","A","D","D","B","B","A","D","A","D","B","C","B","B","D","D","A","D","D","C","A","D","C","D","C",
-        "C","C","A","B","B","D"};
+        "C","C","A","B","B","D"};/// 102
+        public static int[] sygma = new int[102];
 
         public static int randomNo = 101;
-        public string getAns(int id)
-        {
-            return ans[id];
-        }
+        public string getAns(int id){return ans[id];}
 
+        public int getSygma(int id) { return sygma[id]; }
+
+        public void setSygma(int id) { sygma[id] = sygma[id] +1; }
+
+        public void setSygmaOne(int id) { sygma[id] = 1;}
+
+        public void setSygmaWrong(int id) { sygma[id] = 0;}
 
 
         Random random = new Random();
