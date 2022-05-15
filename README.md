@@ -23,7 +23,7 @@
   </ol>
 </details>
 
-## About The Project
+## Proje Hakkında
 Bu uygulama bir öğrencinin belirlenmiş soru havuzundaki soruları rastgele bir şekilde basit bir arayüzle çözmesini sağlayan ve bunun sonucunda çözdüğü soruların istatistiklerini veren bir form uygulamasıdır.
 Uygulamada Öğrenci , Admin ve Sınav Sorumlusu girişleri vardır.
 
