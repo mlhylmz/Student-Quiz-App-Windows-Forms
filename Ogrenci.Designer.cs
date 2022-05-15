@@ -183,7 +183,7 @@
             // sygmaLabel
             // 
             this.sygmaLabel.AutoSize = true;
-            this.sygmaLabel.Location = new System.Drawing.Point(191, 14);
+            this.sygmaLabel.Location = new System.Drawing.Point(211, 14);
             this.sygmaLabel.Name = "sygmaLabel";
             this.sygmaLabel.Size = new System.Drawing.Size(195, 15);
             this.sygmaLabel.TabIndex = 13;
